@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: ${SERVICE_NAME:demo}
+  cloud:
+    config:
+      enabled: false
