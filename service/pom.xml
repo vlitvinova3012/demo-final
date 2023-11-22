@@ -74,7 +74,7 @@
                             <useResponseDTO>true</useResponseDTO>
                             <generateCrud>true</generateCrud>
                             <crudAudit>true</crudAudit>
-                            <swaggerFile>C:\demo\service\src\main\resources\qarcher\qarch_swagger_DQ_Hackathon_Tutorial_ver_1_01_00.json</swaggerFile>
+                            <swaggerFile>C:\demo-final\service\src\main\resources\qarcher\qarch_swagger_DQ_Hackathon_Tutorial_ver_1_01_00.json</swaggerFile>
                         </configuration>
                     </execution>
                     <execution>
