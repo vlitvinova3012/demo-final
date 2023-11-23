@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface SmsVerificationRepository extends JpaRepository<SmsVerification, Long> {
-    Optional<SmsVerification> findByCodeAndProcessGUID();
+    Optional<SmsVerification> findByCodeAndProcessGUID(String processGUID, String code);
 }
