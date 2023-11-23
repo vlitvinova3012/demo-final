@@ -21,8 +21,11 @@ public class SmsVerificationPrimaryService implements SmsVerificationService{
     private final SmsVerificationRepository repository;
     @Override
     public SmsVerificationCheckResponse dsSmsVerificationCheck(SmsVerificationCheckRequest smsVerificationCheckRequest) {
-        repository.findByCodeAndProcessGUID(smsVerificationCheckRequest.getProcessGUID(), smsVerificationCheckRequest.getCode());
-        return null;
+        if(repository.findByCodeAndProcessGUID(smsVerificationCheckRequest.getProcessGUID(), smsVerificationCheckRequest.getCode()).isPresent()){
+            return new SmsVerificationCheckResponse (true);
+        } else {
+            return new SmsVerificationCheckResponse (false);
+        }
     }
 
     @Override
