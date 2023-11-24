@@ -24,7 +24,7 @@
             <column name="phonenumber" type="VARCHAR(50)">
                 <constraints nullable="false"/>
             </column>
-            <column name="secretcode" type="VARCHAR(50)">
+            <column name="code" type="VARCHAR(50)">
                 <constraints nullable="false"/>
             </column>
             <column name="status" type="VARCHAR(50)">
@@ -35,7 +35,7 @@
             <column name="processguid"/>
         </createIndex>
         <createIndex tableName="sms_verification" indexName="k02_sms_verification" unique="false">
-            <column name="secretcode"/>
+            <column name="code"/>
             <column name="status"/>
         </createIndex>
     </changeSet>

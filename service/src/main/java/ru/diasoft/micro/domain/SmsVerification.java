@@ -20,11 +20,11 @@ public class SmsVerification {
     @Column(name = "verificationid")
     private Long verificationId;
     @Column(name = "processguid")
-    private String processGuid;
+    private String processGUID;
     @Column(name = "phonenumber")
     private String phoneNumber;
-    @Column(name = "secretcode")
-    private String secretCode;
+    @Column(name = "code")
+    private String code;
     @Column(name = "status")
     private String status;
 }

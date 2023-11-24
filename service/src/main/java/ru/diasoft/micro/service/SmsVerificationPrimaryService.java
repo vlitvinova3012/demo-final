@@ -34,11 +34,11 @@ public class SmsVerificationPrimaryService implements SmsVerificationService{
         String code = String.format("%04d", new Random().nextInt(10000));
         SmsVerification smsVerification = SmsVerification.builder()
                 .phoneNumber(smsVerificationPostRequest.getPhoneNumber())
-                .processGuid(GUID)
-                .secretCode(code)
+                .processGUID(GUID)
+                .code(code)
                 .status("WAITING")
                 .build();
         SmsVerification saved = repository.save(smsVerification);
-        return new SmsVerificationPostResponse(saved.getProcessGuid());
+        return new SmsVerificationPostResponse(saved.getProcessGUID());
     }
 }
