@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -9,17 +10,16 @@
     </parent>
 
 
-
     <artifactId>demo</artifactId>
     <name>demo - microservice</name>
     <packaging>${packaging.type}</packaging>
-    
+
     <properties>
         <dqcodegen.rest.api>false</dqcodegen.rest.api>
-            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-            <origSourceDir>${project.basedir}/src/main/java</origSourceDir>
-            <realSourceDir>${origSourceDir}</realSourceDir>
-            <delombokSourceDir>${project.build.directory}/delombok</delombokSourceDir>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <origSourceDir>${project.basedir}/src/main/java</origSourceDir>
+        <realSourceDir>${origSourceDir}</realSourceDir>
+        <delombokSourceDir>${project.build.directory}/delombok</delombokSourceDir>
     </properties>
 
     <build>
@@ -86,7 +86,9 @@
                             <goal>local</goal>
                         </goals>
                         <configuration>
-                            <qarcherService>http://mdpnginx.qwork.qrunner.diasoft.ru/gateway/dqservdsgnpassport/dqservdsgnpassport</qarcherService>
+                            <qarcherService>
+                                http://mdpnginx.qwork.qrunner.diasoft.ru/gateway/dqservdsgnpassport/dqservdsgnpassport
+                            </qarcherService>
                             <targetPackage>ru.diasoft.micro</targetPackage>
                             <qarcherModuleName>DQ Mobile Investment Client Portfolio</qarcherModuleName>
                             <!--    -->
@@ -100,7 +102,9 @@
                             <useResponseDTO>true</useResponseDTO>
                             <generateCrud>true</generateCrud>
                             <crudAudit>true</crudAudit>
-                            <swaggerFile>C:\demo-final\service\src\main\resources\qarcher\qarch_swagger_DQ_Hackathon_Tutorial_ver_1_01_00.json</swaggerFile>
+                            <swaggerFile>
+                                C:\demo-final\service\src\main\resources\qarcher\qarch_swagger_DQ_Hackathon_Tutorial_ver_1_01_00.json
+                            </swaggerFile>
                         </configuration>
                     </execution>
                     <execution>
@@ -111,7 +115,9 @@
                         </goals>
                         <configuration>
                             <skip>true</skip>
-                            <qarcherService>http://mdpnginx.qwork.qrunner.diasoft.ru/gateway/dqservdsgnpassport/dqservdsgnpassport</qarcherService>
+                            <qarcherService>
+                                http://mdpnginx.qwork.qrunner.diasoft.ru/gateway/dqservdsgnpassport/dqservdsgnpassport
+                            </qarcherService>
                             <targetPackage>ru.diasoft.micro</targetPackage>
                             <qarcherModuleName>DQ Mobile Investment Client Portfolio</qarcherModuleName>
                             <!--    -->
@@ -175,7 +181,9 @@
                         </goals>
                         <configuration>
                             <outputDirectory>${project.build.directory}/generated-sources/querydsl</outputDirectory>
-                            <processor>com.querydsl.apt.jpa.JPAAnnotationProcessor,lombok.launch.AnnotationProcessorHider$AnnotationProcessor</processor>
+                            <processor>
+                                com.querydsl.apt.jpa.JPAAnnotationProcessor,lombok.launch.AnnotationProcessorHider$AnnotationProcessor
+                            </processor>
                         </configuration>
                     </execution>
                 </executions>
@@ -241,7 +249,7 @@
                         <id>enforce</id>
                         <configuration>
                             <rules>
-                                <DependencyConvergence />
+                                <DependencyConvergence/>
                             </rules>
                         </configuration>
                         <goals>
@@ -332,6 +340,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>1.18.20</version>
             <scope>provided</scope>
         </dependency>
         <!-- diasoft platform -->
@@ -371,7 +380,7 @@
         <!-- Mapstruct -->
         <dependency>
             <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct</artifactId>	        
+            <artifactId>mapstruct</artifactId>
         </dependency>
         <!-- Tests -->
         <dependency>
@@ -436,7 +445,7 @@
             <artifactId>embedded-database-spring-test</artifactId>
             <scope>test</scope>
         </dependency>
-		<dependency>
+        <dependency>
             <groupId>io.zonky.test</groupId>
             <artifactId>embedded-postgres</artifactId>
             <scope>test</scope>
@@ -449,7 +458,7 @@
         </dependency-->
         <dependency>
             <groupId>com.tngtech.archunit</groupId>
-            <artifactId>archunit</artifactId>                
+            <artifactId>archunit</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -458,7 +467,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    
+
     <profiles>
         <profile>
             <id>jar</id>
@@ -580,7 +589,7 @@
                                 <id>default</id>
                                 <phase>package</phase>
                                 <goals>
-                                <goal>build</goal>
+                                    <goal>build</goal>
                                 </goals>
                             </execution>
                         </executions>
@@ -608,7 +617,7 @@
                                 <configuration>
                                     <artifactItems>
                                         <artifactItem>
-                                        <groupId>org.jacoco</groupId>
+                                            <groupId>org.jacoco</groupId>
                                             <artifactId>org.jacoco.agent</artifactId>
                                             <classifier>runtime</classifier>
                                             <version>0.8.6</version>
@@ -623,7 +632,7 @@
                     </plugin>
                 </plugins>
             </build>
-     </profile>
+        </profile>
         <profile>
             <id>war</id>
             <activation>
