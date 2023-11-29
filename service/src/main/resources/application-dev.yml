@@ -21,9 +21,9 @@ spring:
 # Postgres
   datasource:
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/template2
-    username: postgres
-    password: 123456
+    url: jdbc:postgresql://localhost:5432/demoDB?currentSchema=test
+    username: admin
+    password: admin
     hikari:
       connection-test-query:
   jpa:
@@ -42,12 +42,12 @@ spring:
           lob:
             non_contextual_creation: true
   application:
-    name: demo
+    name: DEMO
 
 eureka:
   client:
     service-url:
-      efaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
 # Oracle
 #  datasource:
@@ -86,11 +86,11 @@ eureka:
 #      naming: 
 #        physical-strategy: ${JPA_STRATEGY:ru.diasoft.micro.lib.config.H2PhysicalNamingStrategy}
 # Generate Events Publisher or Subsriber
-  kafka:
-    bootstrap-servers: ${KAFKA_URL:localhost:9092}     
-    admin:
-      properties:
-        request.timeout.ms: ${KAFKA_REQUEST_TIMEOUT:5000}
+# kafka:
+#   bootstrap-servers: ${KAFKA_URL:localhost:9092}
+#   admin:
+#     properties:
+#       request.timeout.ms: ${KAFKA_REQUEST_TIMEOUT:5000}
 
 dstrace:
   enabled: ${TRACER_ENABLE:false}
